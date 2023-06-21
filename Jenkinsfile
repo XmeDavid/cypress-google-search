@@ -44,7 +44,7 @@ pipeline {
             }
         }
         
-        stage('SonarQube analysis') {
+        stage('SonarQube analysis') { //00b03c4d1eb4ffedd3e9a7b64af42cad88f5358d
           when { expression { params.skip_sonar != true } }
           steps {
             script {
@@ -98,3 +98,4 @@ pipeline {
         }
     }
 }
+
