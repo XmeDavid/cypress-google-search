@@ -1,7 +1,7 @@
 pipeline {
       agent any
 
-      tools {nodejs "NodeJS Plugin"}
+      tools {nodejs "NodeJS"}
 
 
       parameters{
@@ -19,7 +19,7 @@ pipeline {
 
      
       stages {
-        stage('Build/Deploy app to staging') {
+        /*stage('Run automated tests'){
             when { expression { params.skip_build != true } }
             steps {
               echo "Copying files to staging and restarting the app"
@@ -30,7 +30,7 @@ pipeline {
                             transfers: [
                                 sshTransfer(
                                     cleanRemote: false,
-                                    excludes: 'node_modules/,cypress/,**/*.yml',
+                                    excludes: 'node_modules/,cypress/,**<DELETE>/*.yml',
                                     execCommand: '''
                                     cd /usr/share/nginx/html
                                     npm ci
@@ -43,12 +43,12 @@ pipeline {
                                     remoteDirectory: '',
                                     remoteDirectorySDF: false,
                                     removePrefix: '',
-                                    sourceFiles: '**/*')],
+                                    sourceFiles: '**<DELETE>/*')],
                         usePromotionTimestamp: false,
                         useWorkspaceInPromotion: false,
                         verbose: true)])
          }
-        }
+        }*/
         stage('Run automated tests'){
             when { expression { params.skip_test != true } }
             steps {
@@ -74,7 +74,7 @@ pipeline {
                 }
             }
         }
-
+        /*
         stage('SonarQube analysis') {
           when { expression { params.skip_sonar != true } }
           steps {
@@ -122,7 +122,7 @@ pipeline {
                     perfReport filterRegex:'', sourceDataFiles: 'result.jtl'
                 }
             }
-        }
+        }*/
 
         stage('Perform manual testing...'){
             steps {
