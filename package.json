@@ -3,7 +3,7 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "cypress:run:chrome": "cypress run --browser chrome --headless",
-    "jenkins": "cypress run --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome"
+    "jenkins": "cypress run --headless --spec ${SPEC} --reporter mochawesome"
   },
   "devDependencies": {
     "cypress": "^7.0.1"
