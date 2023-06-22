@@ -1,0 +1,6 @@
+projectKey=pe2_2220658
+serverUrl=https://sonar.creis.pt
+serverVersion=8.3.1.34397
+dashboardUrl=https://sonar.creis.pt/dashboard?id=pe2_2220658
+ceTaskId=AYjfbpqRycD9pccTjLYd
+ceTaskUrl=https://sonar.creis.pt/api/ce/task?id=AYjfbpqRycD9pccTjLYd
